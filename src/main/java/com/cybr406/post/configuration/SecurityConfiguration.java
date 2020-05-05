@@ -19,7 +19,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 
     @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder authenticationManagerBuilder, AccountAuthenticationProvider accountAuthenticationProvider){
+    public void configureGlobal(AuthenticationManagerBuilder auth, AccountAuthenticationProvider provider) throws Exception{
+            auth.authenticationProvider(provider);
     }
 
     @Override
